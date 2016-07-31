@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="iot.mk.com.iotapp.UserRegistrationActivity"
+    tools:showIn="@layout/activity_user_registration">
+
+    <ProgressBar style="@style/Base.Widget.AppCompat.ProgressBar"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:indeterminate="true" android:visibility="invisible"
+        android:layout_centerInParent="true" android:id="@+id/registerProgressBar"/>
+
+    <RelativeLayout android:id="@+id/rl1"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/title_bar_color">
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Registration" android:textSize="10pt"
+            android:textColor="@android:color/white" android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp" android:padding="10dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent" android:orientation="vertical"
+        android:layout_height="wrap_content" android:paddingLeft="20dp"
+        android:paddingRight="20dp" android:layout_centerInParent="true">
+        <TextView style="@style/TextViewStyle" android:text="Enter name" />
+        <android.support.v7.widget.AppCompatEditText style="@style/EditTextStyle"
+            android:id="@+id/regNameEditText"
+            android:text="Ashish Suhane" />
+        <TextView style="@style/TextViewStyle" android:text="Enter email" />
+        <android.support.v7.widget.AppCompatEditText style="@style/EditTextStyle"
+            android:id="@+id/regEmailEditText"
+            android:text="mk@gmail.com" />
+        <TextView style="@style/TextViewStyle" android:text="Enter recovery email" />
+        <android.support.v7.widget.AppCompatEditText style="@style/EditTextStyle"
+            android:id="@+id/regRecoveryEmailEditText"
+            android:text="ashish@yahoo.com" />
+        <TextView style="@style/TextViewStyle" android:text="Enter password" />
+        <android.support.v7.widget.AppCompatEditText style="@style/EditTextStyle"
+            android:id="@+id/regPasswordEditText"
+            android:text="123" />
+        <TextView style="@style/TextViewStyle" android:text="Enter mobile number" />
+        <android.support.v7.widget.AppCompatEditText style="@style/EditTextStyle"
+            android:id="@+id/regMobileEditText"
+            android:text="9009301310" />
+    </LinearLayout>
+
+    <Button android:text="Submit" android:layout_below="@id/ll1"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" android:background="@drawable/button_background_green"
+        android:textColor="@android:color/white" android:textStyle="bold" android:textSize="6pt"
+        android:id="@+id/userSubmitButton" android:layout_margin="@dimen/fab_margin"
+        android:layout_alignParentRight="true" android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

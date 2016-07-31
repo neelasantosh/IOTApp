@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="iot.mk.com.iotapp.UserHomeActivity"
+    tools:showIn="@layout/activity_user_home">
+
+    <RelativeLayout android:id="@+id/rl1"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/title_bar_color">
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content" android:text="Logout" android:gravity="center" android:paddingLeft="5dp"
+            android:layout_height="wrap_content" android:background="@android:color/transparent"
+            android:id="@+id/logoutButton" />
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Home" android:textSize="10pt"
+            android:textColor="@android:color/white" android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp" android:padding="10dp"/>
+    </RelativeLayout>
+    <LinearLayout android:layout_below="@id/rl1" android:id="@+id/cuhTopLayout"
+        android:layout_width="match_parent" android:padding="5dp"
+        android:layout_height="wrap_content" android:gravity="center_horizontal" android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="7pt"
+            android:text="Welcome" android:textStyle="italic"/>
+        <TextView android:id="@+id/userNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginLeft="6dp"
+            android:textSize="10pt" android:textStyle="bold"
+            android:text="Mohsin Khan" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/connectConfigLayout"
+        android:layout_width="match_parent" android:layout_marginTop="20dp"
+        android:layout_height="wrap_content" android:layout_below="@id/cuhTopLayout"
+        android:layout_centerInParent="true" android:padding="10dp">
+        <LinearLayout android:orientation="horizontal" android:id="@+id/tempTopLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout android:id="@+id/ll1" android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight=".4">
+                <TextView style="@style/TextViewStyle" android:text="Enter IP Address" />
+                <android.support.v7.widget.AppCompatAutoCompleteTextView style="@style/EditTextStyle" android:id="@+id/dialogIpEditText"
+                    android:inputType="text" android:completionThreshold="1"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight=".6">
+                <TextView style="@style/TextViewStyle" android:text="Enter Port Number" />
+                <EditText style="@style/EditTextStyle" android:text="1883" android:id="@+id/dialogPortEditText"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@+id/tempMiddleLayout"
+            android:layout_width="match_parent" android:layout_below="@id/tempTopLayout"
+            android:layout_height="wrap_content" android:layout_weight=".6">
+            <TextView style="@style/TextViewStyle" android:text="Enter Client Id" />
+            <EditText style="@style/EditTextStyle" android:id="@+id/dialogClientIdEditText"/>
+        </LinearLayout>
+        <LinearLayout android:layout_below="@id/tempMiddleLayout" android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_height="wrap_content">
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/cleanSessionCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Set Clean Session" />
+            <android.support.v7.widget.SwitchCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rememberConfigCheckBox" android:text="Remember this configuration"/>
+
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_below="@id/connectConfigLayout"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+            <android.support.v7.widget.AppCompatButton
+                style="@style/Base.Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/connect"
+                android:id="@+id/connectButton"
+                android:layout_below="@+id/userNameTextView" />
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alarms For Devices"
+                android:id="@+id/setAlarmForDevices"
+                android:layout_below="@+id/connectButton" />
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Control Panel"
+                android:id="@+id/controlPanelButton"
+                android:layout_below="@+id/viewConnectedDeviceButton" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

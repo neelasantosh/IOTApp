@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <LinearLayout android:orientation="horizontal" android:id="@+id/tempTopLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:id="@+id/ll1" android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight=".4">
+            <TextView style="@style/TextViewStyle" android:text="Enter IP Address" />
+            <EditText style="@style/EditTextStyle" android:id="@+id/dialogIpEditText" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight=".6">
+            <TextView style="@style/TextViewStyle" android:text="Enter Port Number" />
+            <EditText style="@style/EditTextStyle" android:text="1883" android:id="@+id/dialogPortEditText"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/tempMiddleLayout"
+        android:layout_width="match_parent" android:layout_below="@id/tempTopLayout"
+        android:layout_height="wrap_content" android:layout_weight=".6">
+        <TextView style="@style/TextViewStyle" android:text="Enter Client Id" />
+        <EditText style="@style/EditTextStyle" android:id="@+id/dialogClientIdEditText"/>
+    </LinearLayout>
+    <LinearLayout android:layout_below="@id/tempMiddleLayout" android:orientation="horizontal"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+        <android.support.v7.widget.AppCompatCheckBox
+            android:layout_width="match_parent" android:layout_weight=".5"
+            android:layout_height="wrap_content" android:text="Set Clean Session"
+            android:checked="false"
+            android:id="@+id/cleanSessionCheckBox" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_alignParentBottom="true"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:id="@+id/dialogConnectButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight=".5"
+            android:text="Connect"/>
+        <Button android:id="@+id/dialogCancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight=".5"
+            android:text="Cancel"/>
+    </LinearLayout>
+</RelativeLayout>

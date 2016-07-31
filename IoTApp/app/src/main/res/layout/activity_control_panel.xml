@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="iot.mk.com.iotapp.ControlPanelActivity">
+
+    <RelativeLayout android:id="@+id/cpTopLayout"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/title_bar_color">
+        <TextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Control Panel" android:textSize="10pt"
+            android:textColor="@android:color/white" android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp" android:padding="10dp"/>
+    </RelativeLayout>
+
+    <!--<TextView android:layout_below="@id/cpTopLayout" android:layout_marginTop="10dp" android:textStyle="bold"
+        android:layout_width="match_parent" android:gravity="center" android:textColor="@color/red"
+        android:layout_height="wrap_content" android:text="Your are not connected!\nPlease go back and make a connection first."/>
+    -->
+    <ScrollView android:layout_below="@id/cpTopLayout"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical">
+
+            <RelativeLayout android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:background="#F44336" android:padding="5dp">
+                <Button android:id="@+id/lampOnButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="On"/>
+                <Button android:id="@+id/lampOffButton"
+                    android:layout_width="wrap_content" android:layout_below="@id/lampOnButton"
+                    android:layout_height="wrap_content" android:text="Off"/>
+                <ImageView android:src="@drawable/lamp_on" android:id="@+id/lampImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_alignParentRight="true"/>
+                <TextView android:text="This is lamp control. You can switch on or switch off lamp by clicking on and off button."
+                    android:layout_width="wrap_content" android:layout_toRightOf="@id/lampOnButton"
+                    android:layout_height="wrap_content" android:layout_toLeftOf="@id/lampImageView"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignBottom="@+id/lampOffButton"
+                    android:layout_alignParentTop="true" android:gravity="center" />
+            </RelativeLayout>
+            <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent"
+                android:orientation="horizontal" android:background="#43A047" android:padding="5dp">
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_weight=".3">
+                    <android.support.v7.widget.AppCompatSeekBar android:id="@+id/tempGaugeSeekBar"
+                        android:layout_width="match_parent" android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:max="100" android:thumbTint="#E8F5E9"
+                        android:indeterminate="false" />
+                    <TextView android:text="Use the above slider to increase or decrease the temperature of the balcony."
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_margin="10dp"/>
+                </LinearLayout>
+                <ImageView android:src="@drawable/temperature_gauge" android:layout_toRightOf="@id/tempGaugeSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_weight=".7"/>
+            </LinearLayout>
+            <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent"
+                android:orientation="horizontal" android:background="#2196F3" android:padding="5dp">
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_weight=".3">
+                    <android.support.v7.widget.AppCompatSeekBar android:id="@+id/dimmerSeekBar"
+                        android:layout_width="match_parent" android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:indeterminate="false"
+                        android:thumbTint="#E3F2FD"/>
+                    <TextView android:text="Use the above slider to increase or decrease the brightness of lamp."
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_margin="10dp" android:textColor="@android:color/white"/>
+                </LinearLayout>
+                <ImageView android:src="@drawable/dimmer_bulb" android:layout_toRightOf="@id/tempGaugeSeekBar"
+                    android:layout_width="match_parent" android:id="@+id/dimmerLightImageView"
+                    android:layout_height="wrap_content" android:layout_weight=".7"/>
+            </LinearLayout>
+            <RelativeLayout android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:background="#3F51B5" android:padding="5dp">
+                <Button android:id="@+id/doorOpenButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Open"/>
+                <Button android:id="@+id/doorCloseButton"
+                    android:layout_width="wrap_content" android:layout_below="@id/doorOpenButton"
+                    android:layout_height="wrap_content" android:text="Close"/>
+                <ImageView android:src="@drawable/door_close" android:id="@+id/doorImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_alignParentRight="true"/>
+                <TextView android:text="This is front door control.Use Open and Close to control the door."
+                    android:layout_width="wrap_content" android:layout_toRightOf="@id/doorOpenButton"
+                    android:layout_height="wrap_content" android:layout_toLeftOf="@id/doorImageView"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignBottom="@+id/doorCloseButton"
+                    android:layout_alignParentTop="true" android:gravity="center" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:background="#FFEB3B" android:padding="5dp">
+                <Button android:id="@+id/garrageDoorOpenButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Open"/>
+                <Button android:id="@+id/garrageDoorCloseButton"
+                    android:layout_width="wrap_content" android:layout_below="@id/garrageDoorOpenButton"
+                    android:layout_height="wrap_content" android:text="Close"/>
+                <ImageView android:src="@drawable/garrage_close" android:id="@+id/garrageDoorImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_alignParentRight="true"/>
+                <TextView android:text="This is garrage door control.Use Open and Close to control the door."
+                    android:layout_width="wrap_content" android:layout_toRightOf="@id/garrageDoorOpenButton"
+                    android:layout_height="wrap_content" android:layout_toLeftOf="@id/garrageDoorImageView"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignBottom="@+id/garrageDoorCloseButton"
+                    android:layout_alignParentTop="true" android:gravity="center" />
+            </RelativeLayout>
+            <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent"
+                android:orientation="horizontal" android:background="#607D8B" android:padding="5dp">
+                <LinearLayout android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_weight=".3">
+                    <android.support.v7.widget.AppCompatSeekBar android:id="@+id/valveSeekbar"
+                        android:layout_width="match_parent" android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:indeterminate="false"
+                        android:thumbTint="#E3F2FD"/>
+                    <TextView android:text="Use above slider to control the water valve. Slide the slider to open or close the water valve."
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_margin="10dp" android:textColor="@android:color/white"/>
+                </LinearLayout>
+                <ImageView android:src="@drawable/valve" android:layout_toRightOf="@id/tempGaugeSeekBar"
+                    android:layout_width="match_parent" android:id="@+id/valveImageView"
+                    android:layout_height="wrap_content" android:layout_weight=".7"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
